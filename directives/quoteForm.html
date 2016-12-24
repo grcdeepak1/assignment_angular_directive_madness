@@ -1,10 +1,15 @@
-<form class="form-group" name="quoteForm" ng-submit="createQuote()" novalidate>
+<form class="form-group" name="quoteForm" novalidate>
   <fieldset>
     <label for="quote">Quote:</label>
-    <textarea class="form-control" rows="2" id="quote" ng-model="quoteParams.quotemessage"></textarea><br>
-
+    <input type="text" name="message" ng-model="quoteParams.quotemessage" ng-minlength="2" required >
+    <p class="text-danger" ng-show="quoteForm.message.$invalid && !quoteForm.message.$pristine">
+     The message is too short or empty, minimum 2 characters.
+    </p>
     <label for="author">Author:</label>
-    <input type="text" ng-model="quoteParams.quoteauthor" ng-minlength="2" ng-maxlength="32" required>
-    <button type="button" class="btn btn-info" ng-click="createQuote()">Create</button>
+    <input type="text" ng-model="quoteParams.quoteauthor" name="author" ng-minlength="2" ng-maxlength="32" required>
+    <p class="text-danger" ng-show="quoteForm.author.$invalid && !quoteForm.author.$pristine">
+     The message is too short or empty, minimum 2 characters. max 32 characters.
+    </p>
+    <button type="button" class="btn btn-info" ng-click="createQuote(quoteForm.$valid, quoteForm)" ng-hide="quoteForm.$invalid">Create</button>
   </fieldset>
 </form>

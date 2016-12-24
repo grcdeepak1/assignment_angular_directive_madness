@@ -6,10 +6,20 @@
   height: 60px;
   background-color: #f5f5f5;
 }
-
-.invalid {
-  border: 1px solid red;
+input {
+  display: block;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-bottom: 20px;
 }
-.valid {
-  border: 1px solid green;
+
+input.ng-invalid {
+  border: 5px solid red;
+}
+
+input.ng-valid {
+  border: 5px solid green;
+}
+input.ng-untouched {
+  border: 5px solid gray;
 }

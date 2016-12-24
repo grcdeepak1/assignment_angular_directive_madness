@@ -4,13 +4,17 @@ directiveMadness.controller('QuotesCtrl', ['$scope', function($scope) {
                   ];
   $scope.name = "Deepak"
   $scope.quoteParams = { }
-  $scope.createQuote = function() {
-    var quote = {
-       message: $scope.quoteParams.quotemessage,
-       author: $scope.quoteParams.quoteauthor
-     };
-     $scope.quotes.push(quote);
-     $scope.quoteParams.quotemessage = $scope.quoteParams.quoteauthor = "";
+  $scope.createQuote = function(valid, form) {
+    if (valid) {
+      var quote = {
+         message: $scope.quoteParams.quotemessage,
+         author: $scope.quoteParams.quoteauthor
+       };
+       $scope.quotes.push(quote);
+       $scope.quoteParams = {};
+       form.$setPristine();
+       form.$setUntouched();
+    }
   };
   $scope.deleteQuote = function(quote) {
     var index = $scope.quotes.indexOf(quote);
