@@ -17,6 +17,13 @@
     <main-header>Form h1 header</main-header>
     <radio-form></radio-form>
     <p colorize background="black" color="yellow">Hello, I am yellow over black</p>
+    <p ng-mousedown="mouseState = 'DOWN'" ng-mouseup="mouseState = 'UP'">
+      Mouse is : {{ mouseState ? mouseState : "UP" }}
+    </p>
+    <p ng-mouseenter="hoverState = 'OVER'" ng-mouseleave="hoverState = 'LEAVE'">
+      Hover state : {{ hoverState }}
+    </p>
+    <button ng-click="buttonText = ''" ng-dblclick="buttonText = 'double'" class="btn btn-normal">I am {{buttonText}} clickable</button>
   </div>
 <copyright>Dubba Company</copyright>
 </body>
