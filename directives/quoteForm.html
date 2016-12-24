@@ -1,9 +1,10 @@
-<form class="form-group column-xs-6">
+<form class="form-group" name="quoteForm" ng-submit="createQuote()" novalidate>
   <fieldset>
     <label for="quote">Quote:</label>
-    <textarea class="form-control" rows="2" id="quote" ng-model="quoteMessage"></textarea><br>
+    <textarea class="form-control" rows="2" id="quote" ng-model="quoteParams.quotemessage"></textarea><br>
+
     <label for="author">Author:</label>
-    <input type="text" ng-model="quoteAuthor">
+    <input type="text" ng-model="quoteParams.quoteauthor" ng-minlength="2" ng-maxlength="32" required>
     <button type="button" class="btn btn-info" ng-click="createQuote()">Create</button>
   </fieldset>
 </form>
