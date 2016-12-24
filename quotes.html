@@ -11,19 +11,17 @@
   <script src="app.js"></script>
 </head>
 
-<body>
+<body ng-controller="QuotesCtrl">
 <main-nav></main-nav>
-  <div class="container ">
-    <main-header>Form h1 header</main-header>
-    <radio-form></radio-form>
-    <p colorize background="black" color="yellow">Hello, I am yellow over black</p>
-    <p ng-mousedown="mouseState = 'DOWN'" ng-mouseup="mouseState = 'UP'">
-      Mouse is : {{ mouseState ? mouseState : "UP" }}
-    </p>
-    <p ng-mouseenter="hoverState = 'OVER'" ng-mouseleave="hoverState = 'LEAVE'">
-      Hover state : {{ hoverState }}
-    </p>
-    <button ng-click="buttonText = ''" ng-dblclick="buttonText = 'double'" class="btn btn-normal">I am {{buttonText}} clickable</button>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-6">
+      <quote-form></quote-form>
+    </div>
+    <div class="col-xs-6">
+      <quotes-index></quotes-index>
+    </div>
   </div>
+</div>
 <copyright>Dubba Company</copyright>
 </body>
