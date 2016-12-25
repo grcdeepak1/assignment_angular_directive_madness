@@ -15,20 +15,21 @@
 <body ng-controller="scopeCtrl">
   <main-nav></main-nav>
   <div class="container">
+    <div class="col-xs-6">
     <label>TwoWayVar:</label>
-    <input type="text" name="twoWayVar" ng-model="twoWay">
-    <p>{{twoWay}}</p>
+    <input type="text" ng-model="firstname">
+    <p>{{firstname}}</p>
     <label>OneWayVar:</label>
-    <input type="text" name="twoWayVar" ng-model="oneWay">
-    <p>{{oneWay}}</p>
+    <input type="text" ng-model="lastname">
+    <p>{{lastname}}</p>
 
-    name:
+    <label>Name:</label>
     <input type="text" name="name" value="" ng-model="name">
-    <button type="button" name="button" ng-click="sayHello(name)">sayHello</button>
-
-
-    <hr>
-    <isolated two-way="twoWay"></isolated>
+    <button type="button" name="button" ng-click="sayhello(name)">sayHello</button>
+    </div>
+      <div class="col-xs-6">
+      <isolated fname="firstname" lname={{lastname}} dirHello="sayhello(name)"></isolated>
+    </div>
   </div>
-  <copyright>Dubba Company</copyright>
+<!--  <copyright>Dubba Company</copyright>-->
 </body>

@@ -1,8 +1,8 @@
 directiveMadness.controller('scopeCtrl', ['$scope', '$window', function ($scope, $window) {
-  $scope.twoWay = "Deepak";
-  $scope.oneWay = "Gov";
-  $scope.sayHello = function (name) {
-    $window.alert("Hello " + name);
+  $scope.firstname = "Deepak";
+  $scope.lastname = "Gov";
+  $scope.sayhello = function (name) {
+    $window.alert("Hello "+ name );
   };
 }])
 directiveMadness.directive('isolated', ['$window', function ($window) {
@@ -10,16 +10,16 @@ directiveMadness.directive('isolated', ['$window', function ($window) {
     templateUrl: 'directives/isolated.html',
     restrict: "E",
     scope: {
-      twoWay: '=',
-      oneWay: '@',
-      sayDirectiveHello: '&',
+      fname: '=',
+      lname: '@',
+      dirhello: '&',
     },
     link: function (scope) {
-      scope.twoWay = "two way changed";
-      scope.oneWay = "one way changed";
-      scope.sayDirectiveHello = function (name) {
-        $window.alert("Hello " + name + " from isolated directive");
-      };
+      scope.fname = "two way changed";
+      scope.lname = "one way changed";
+      scope.dirhello = function (name) {
+        $window.alert("Hello "+ name + " called from inside the directive");
+      }
     },
   };
 }]
